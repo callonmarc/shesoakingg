@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XXX DENIM DOLLZ • LIVE MANNEQUIN ORGY</title>
+  <title>shesoakingg • XXX DENIM DOLLZ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-white font-sans">
-  
-  <!-- Top Banner -->
-  <div class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 py-4 text-center border-b-8 border-red-600">
-    <div class="text-6xl font-black tracking-[6px] text-red-600 drop-shadow-[4px_4px_0_#000]">
+<body class="bg-black text-white font-sans overflow-x-hidden">
+
+  <!-- Top Bar -->
+  <div class="bg-black py-2 border-b border-yellow-400 flex items-center justify-between px-6">
+    <div class="text-pink-500 font-black text-2xl tracking-widest">shesoakingg</div>
+    <div class="text-yellow-400 text-sm font-bold">18+ ONLY • LIVE MANNEQUIN ORGY</div>
+  </div>
+
+  <!-- Main Banner -->
+  <div class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 py-5 text-center border-b-8 border-red-600 relative">
+    <div class="text-5xl md:text-6xl font-black tracking-[6px] text-red-600 drop-shadow-[4px_4px_0_#000]">
       XXX DENIM DOLLZ
     </div>
-    <div class="text-4xl font-bold text-red-700 mt-1 tracking-widest flash">
+    <div class="text-3xl md:text-4xl font-bold text-red-700 mt-1 tracking-widest flash">
       LIVE MANNEQUIN ORGY!
     </div>
   </div>
 
-  <!-- Navigation -->
-  <nav class="bg-pink-900 py-3 border-b-4 border-yellow-400 flex justify-center gap-8 text-xl font-bold">
+  <nav class="bg-pink-900 py-3 border-b-4 border-yellow-400 flex justify-center gap-8 text-lg font-bold">
     <a href="#" class="hover:text-yellow-300">HOME</a>
     <a href="#" class="hover:text-yellow-300">CUSTOMIZE</a>
     <a href="#" class="hover:text-yellow-300">LIVE CAMS</a>
@@ -29,118 +34,74 @@
   </nav>
 
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 p-6">
-    
+
     <!-- LEFT SIDEBAR -->
     <div class="lg:w-80 space-y-6">
-      <div class="border-4 border-pink-500 bg-zinc-950 p-5">
+      <div class="border-4 border-pink-500 bg-zinc-950 p-5 text-center">
         <div class="text-red-500 text-2xl font-black">FREE PREVIEW</div>
         <div class="text-yellow-300 text-sm">100% PLASTIC • NO CLOTHES UNDERNEATH</div>
       </div>
 
-      <!-- Horny Ad -->
+      <img src="assets/mannequin-group.jpg" class="w-full border-4 border-yellow-400" alt="Mannequin Orgy">
+
       <div class="bg-red-900 border-4 border-yellow-400 p-6 text-center">
-        <div class="text-3xl font-black text-white leading-tight mb-4">
-          THESE MANNEQUINS ARE<br>HORNY FOR YOU!
-        </div>
+        <div class="text-3xl font-black leading-tight mb-4">THESE MANNEQUINS ARE<br>HORNY FOR YOU!</div>
         <button onclick="stripDenim()" 
-                class="mt-2 bg-white hover:bg-yellow-300 text-black px-10 py-4 text-2xl font-black border-4 border-red-600 active:scale-95 transition-transform">
+                class="bg-white hover:bg-yellow-300 text-black px-10 py-4 text-2xl font-black border-4 border-red-600">
           CLICK TO STRIP THE DENIM
         </button>
       </div>
-
-      <div class="bg-purple-950 border border-pink-500 p-5">
-        <div class="text-pink-400 text-xl font-bold mb-3">🔴 LIVE CAMS</div>
-        <div class="grid grid-cols-2 gap-2 text-sm">
-          <div class="bg-black p-3 border border-red-500 text-center">DENIM STRIP CAM</div>
-          <div class="bg-black p-3 border border-red-500 text-center">ASS IN JEANS</div>
-        </div>
-      </div>
     </div>
 
-    <!-- MAIN PREVIEW -->
+    <!-- MAIN AREA -->
     <div class="flex-1">
-      <div id="preview" 
-           class="relative bg-zinc-950 border-[10px] border-yellow-400 aspect-video flex items-center justify-center overflow-hidden shadow-2xl">
-        
-        <!-- Mannequin Image (you can replace this) -->
-        <img id="mannequin-img" 
-             src="https://picsum.photos/id/1015/1200/800" 
-             class="absolute inset-0 w-full h-full object-cover transition-all duration-700"
-             style="filter: hue-rotate(200deg) saturate(1.4);">
-        
-        <div class="relative z-10 text-center px-6">
-          <div class="text-7xl font-black text-red-500 tracking-widest drop-shadow-lg">LIVE</div>
-          <div class="text-5xl font-bold text-white">MANNEQUIN</div>
-          <div class="mt-4 text-3xl text-pink-400 font-bold">CUSTOMIZE HER DENIM LIVE</div>
-        </div>
+      <div class="relative bg-zinc-950 border-[12px] border-yellow-400 aspect-[16/10] flex items-center justify-center overflow-hidden">
+        <img id="main-mannequin" 
+             src="assets/model-1.PNG" 
+             class="w-full h-full object-contain transition-all duration-700"
+             alt="Denim Model">
 
-        <!-- Strip overlay -->
-        <div id="strip-overlay" 
-             class="hidden absolute inset-0 z-20 flex items-center justify-center bg-black/90 text-center">
-          <div class="text-7xl font-black text-pink-500 animate-pulse">
-            SHE'S STRIPPING FOR YOU 💦
+        <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+          <div class="text-center">
+            <div class="text-6xl font-black text-red-500 tracking-widest drop-shadow-2xl">LIVE</div>
+            <div class="text-5xl font-bold text-white -mt-3">CUSTOMIZE HER</div>
           </div>
         </div>
       </div>
 
-      <div class="mt-4 text-center">
-        <span class="bg-yellow-400 text-black px-4 py-1 text-sm font-bold tracking-widest">
-          INTERACTIVE 3D MANNEQUIN (COMING SOON)
-        </span>
+      <div class="mt-6 grid grid-cols-2 gap-4">
+        <img src="assets/real-denim.jpg" class="border-4 border-pink-500 cursor-pointer hover:scale-105 transition" onclick="changeImage(this.src)">
+        <img src="assets/mannequin-group.jpg" class="border-4 border-pink-500 cursor-pointer hover:scale-105 transition" onclick="changeImage(this.src)">
       </div>
     </div>
 
     <!-- RIGHT SIDEBAR - CUSTOMIZER -->
     <div class="lg:w-80 bg-zinc-950 border-4 border-pink-500 p-7 space-y-8">
-      <div>
-        <h3 class="text-yellow-300 text-3xl font-black tracking-widest mb-6">CUSTOMIZE DENIM</h3>
-        
-        <!-- Color -->
-        <div class="mb-7">
-          <div class="uppercase tracking-widest text-pink-400 text-sm mb-3">DENIM COLOR</div>
-          <div class="flex gap-4 flex-wrap" id="color-swatches"></div>
-        </div>
+      <h3 class="text-yellow-300 text-3xl font-black tracking-widest mb-6">CUSTOMIZE DENIM</h3>
 
-        <!-- Wash Type -->
-        <div class="mb-7">
-          <div class="uppercase tracking-widest text-pink-400 text-sm mb-3">WASH TYPE</div>
-          <select id="wash-select" onchange="updateMannequin()"
-                  class="w-full bg-black border-2 border-pink-500 p-4 text-xl text-white">
-            <option value="dark">DARK WASH • SEXY</option>
-            <option value="light">LIGHT WASH • SLUTTY</option>
-            <option value="distressed">DISTRESSED RIPPED</option>
-            <option value="acid">ACID WASH VINTAGE</option>
-          </select>
-        </div>
-
-        <!-- Jacket / Jeans -->
-        <div>
-          <div class="uppercase tracking-widest text-pink-400 text-sm mb-3">ITEM</div>
-          <div class="flex gap-4">
-            <button onclick="selectItem(true)" id="btn-jacket"
-                    class="flex-1 py-5 text-2xl font-black border-4 bg-yellow-400 border-yellow-400 text-black">JACKET</button>
-            <button onclick="selectItem(false)" id="btn-jeans"
-                    class="flex-1 py-5 text-2xl font-black border-4 border-white hover:bg-zinc-900">JEANS</button>
-          </div>
-        </div>
+      <div class="mb-7">
+        <div class="uppercase tracking-widest text-pink-400 text-sm mb-3">COLOR / WASH</div>
+        <div class="flex gap-3 flex-wrap" id="color-swatches"></div>
       </div>
 
-      <button onclick="addToCart()"
-              class="w-full py-7 text-4xl font-black bg-red-600 hover:bg-red-700 border-4 border-yellow-400 active:scale-[0.985]">
+      <button onclick="addToCart()" 
+              class="w-full py-8 text-4xl font-black bg-red-600 hover:bg-red-700 border-4 border-yellow-400">
         ADD TO CART &amp; FUCK
       </button>
 
-      <div class="text-center text-xs text-zinc-400 pt-4 border-t border-zinc-800">
-        18+ ONLY • THESE PLASTIC BABES WANT YOUR DENIM
+      <div class="text-xs text-zinc-400 text-center pt-4 border-t border-zinc-700">
+        18+ ONLY • PLASTIC BABES WAITING FOR YOUR CUSTOM DENIM
       </div>
     </div>
   </div>
 
   <!-- Bottom Banner -->
-  <div class="bg-pink-700 py-8 border-t-8 border-yellow-400 text-center">
-    <div class="text-5xl font-black tracking-[4px]">CLICK HERE TO ENTER THE ORGY →</div>
-    <div class="mt-3 text-yellow-300 text-2xl">FREE PREVIEW • 56K LOADING...</div>
+  <div class="bg-pink-700 py-8 text-center border-t-8 border-yellow-400">
+    <div class="text-4xl md:text-5xl font-black">CLICK HERE TO ENTER THE ORGY →</div>
   </div>
+
+  <!-- Auto Popups -->
+  <div id="popup-container"></div>
 
   <script src="script.js"></script>
 </body>
