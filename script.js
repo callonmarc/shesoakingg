@@ -34,27 +34,45 @@ function addToCart() {
 }
 
 // Auto Popups when page loads
-function createPopup(src, delay) {
+const popupAds = [
+  { src: 'assets/popup-1.JPG', delay: 250, position: 'top-[8%] left-[6%]' },
+  { src: 'assets/popup-2.JPG', delay: 900, position: 'top-[15%] right-[7%]' },
+  { src: 'assets/popup-3.JPG', delay: 1500, position: 'bottom-[10%] left-[10%]' },
+  { src: 'assets/popup-4.JPG', delay: 2200, position: 'bottom-[8%] right-[8%]' },
+];
+
+function createPopup(src, delay, position, index) {
   setTimeout(() => {
+    const popupContainer = document.getElementById('popup-container');
+    if (!popupContainer) return;
+
     const popup = document.createElement('div');
-    popup.className = `popup fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black border-4 border-red-500 z-50 shadow-2xl max-w-[380px]`;
+    popup.className = `popup fixed ${position} bg-black border-4 border-red-500 z-50 shadow-2xl w-[min(82vw,360px)] max-h-[82vh] overflow-hidden`;
+    popup.style.zIndex = 1000 + index;
     popup.innerHTML = `
+      <div class="bg-yellow-300 text-red-700 text-center text-sm font-black tracking-widest px-8 py-1 border-b-4 border-red-500 flash">
+        LIMITED DENIM DROP • CLICK TO SHOP
+      </div>
       <div class="relative">
-        <img src="${src}" class="w-full block">
-        <button onclick="this.parentElement.parentElement.remove()" 
-                class="absolute top-2 right-2 bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xl font-bold hover:bg-red-700">
+        <img src="${src}" class="w-full block" alt="Limited denim popup ad ${index + 1}">
+        <button type="button" aria-label="Close popup ad"
+                class="absolute top-2 right-2 bg-red-600 text-white w-9 h-9 rounded-full flex items-center justify-center text-2xl font-black hover:bg-red-700 border-2 border-yellow-300">
           ×
         </button>
       </div>
     `;
-    document.getElementById('popup-container').appendChild(popup);
+    popup.querySelector('button').addEventListener('click', () => popup.remove());
+    popupContainer.appendChild(popup);
   }, delay);
 }
 
-// Trigger popups
-window.onload = () => {
-  createPopup('assets/popup-1.jpg', 800);
-  createPopup('assets/popup-2.jpg', 2200);
-  createPopup('assets/popup-3.jpg', 4200);
-  createPopup('assets/popup-4.jpg', 6500);
-};
+function launchEntryPopups() {
+  popupAds.forEach((ad, index) => createPopup(ad.src, ad.delay, ad.position, index));
+}
+
+// Trigger popups as soon as the page is ready, without waiting on every image/ad asset.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', launchEntryPopups);
+} else {
+  launchEntryPopups();
+}
