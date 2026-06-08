@@ -4,5 +4,14 @@
 
 @keyframes flash {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.65; }
+  50% { opacity: 0.7; }
+}
+
+#popup-container .popup {
+  animation: popup-appear 0.4s ease-out;
+}
+
+@keyframes popup-appear {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
