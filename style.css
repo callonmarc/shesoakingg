@@ -1,17 +1,245 @@
+:root {
+  --hot-red: #dc2626;
+  --porn-pink: #db2777;
+  --gold: #facc15;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+.gallery-img,
+.tilt-card {
+  cursor: pointer;
+}
+
 .flash {
   animation: flash 1.2s infinite;
 }
 
 @keyframes flash {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  50% { opacity: 0.52; }
+}
+
+.marquee-shell {
+  overflow: hidden;
+  max-width: min(640px, 90vw);
+  white-space: nowrap;
+}
+
+.marquee-text {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee 13s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.sparkle-field::before,
+.sparkle-field::after {
+  content: "✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦";
+  position: absolute;
+  inset: 0;
+  color: rgba(220, 38, 38, 0.5);
+  font-size: 3rem;
+  letter-spacing: 1rem;
+  animation: sparkle-drift 8s linear infinite;
+}
+
+.sparkle-field::after {
+  animation-direction: reverse;
+  color: rgba(219, 39, 119, 0.45);
+  top: 35%;
+}
+
+@keyframes sparkle-drift {
+  from { transform: translateX(-10%) rotate(-3deg); }
+  to { transform: translateX(18%) rotate(3deg); }
+}
+
+.nav-link,
+[data-page],
+[data-action] {
+  transition: transform 0.18s ease, color 0.18s ease, background-color 0.18s ease;
+}
+
+.nav-link:hover,
+[data-page]:hover,
+[data-action]:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.page-section {
+  display: none;
+  animation: page-pop 0.35s ease-out;
+}
+
+.page-section.active-page {
+  display: block;
+}
+
+@keyframes page-pop {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.pulse-border {
+  animation: pulse-border 1.6s infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7); }
+  50% { box-shadow: 0 0 28px 8px rgba(250, 204, 21, 0.25); }
+}
+
+.cam-frame::after {
+  content: "REC ●";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 12;
+  background: rgba(0, 0, 0, 0.78);
+  border: 2px solid var(--hot-red);
+  color: var(--hot-red);
+  padding: 0.25rem 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+}
+
+.tilt-card:hover,
+.gallery-img:hover {
+  transform: rotate(-1.5deg) scale(1.04);
+  filter: saturate(1.35) contrast(1.1);
+}
+
+.filter-btn {
+  background: #18181b;
+  border: 3px solid var(--porn-pink);
+  color: white;
+  font-weight: 900;
+  padding: 0.65rem 1rem;
+}
+
+.filter-btn:hover,
+.filter-btn.active-filter {
+  background: var(--gold);
+  border-color: var(--hot-red);
+  color: #991b1b;
+}
+
+.product-card {
+  background: #09090b;
+  border: 4px solid var(--porn-pink);
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-7px) rotate(0.5deg);
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(219, 39, 119, 0.38);
+}
+
+.product-card::before {
+  content: "HOT";
+  position: absolute;
+  top: 1rem;
+  right: -2.1rem;
+  width: 8rem;
+  text-align: center;
+  transform: rotate(35deg);
+  background: var(--hot-red);
+  color: white;
+  font-weight: 900;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+
+.product-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  background: black;
+}
+
+.patch-btn {
+  background: #000;
+  border: 3px solid var(--gold);
+  color: #f9a8d4;
+  font-weight: 900;
+  padding: 0.8rem;
+}
+
+.patch-btn:hover,
+.patch-btn.active-patch {
+  background: var(--hot-red);
+  color: white;
+}
+
+.floating-patch {
+  position: absolute;
+  font-size: clamp(2rem, 8vw, 5rem);
+  animation: patch-throb 0.8s infinite alternate;
+  filter: drop-shadow(3px 3px 0 #000);
+}
+
+@keyframes patch-throb {
+  from { transform: scale(0.92) rotate(-8deg); }
+  to { transform: scale(1.08) rotate(8deg); }
+}
+
+.gallery-img {
+  width: 100%;
+  min-height: 220px;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid var(--porn-pink);
+  background: #09090b;
+  transition: transform 0.18s ease, filter 0.18s ease;
 }
 
 #popup-container .popup {
-  animation: popup-appear 0.4s ease-out;
+  animation: popup-appear 0.35s cubic-bezier(.2, 1.4, .5, 1);
 }
 
 @keyframes popup-appear {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from { transform: scale(0.55) rotate(-8deg); opacity: 0; }
+  to { transform: scale(1) rotate(var(--popup-rotate, 0deg)); opacity: 1; }
+}
+
+.popup {
+  touch-action: none;
+}
+
+.popup-ad-image {
+  width: 100%;
+  display: block;
+}
+
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translate(-50%, 150%);
+  z-index: 2000;
+  background: var(--gold);
+  color: #991b1b;
+  border: 4px solid var(--hot-red);
+  padding: 1rem 1.5rem;
+  font-weight: 900;
+  text-align: center;
+  transition: transform 0.25s ease;
+  max-width: min(90vw, 520px);
+}
+
+#toast.show {
+  transform: translate(-50%, 0);
 }
